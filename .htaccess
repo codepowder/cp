@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^(.*)$ https://codepowder.com/$1 [R=301,L]
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType text/css "access"
+  ExpiresByType text/js "access"
+  ExpiresByType text/javascript "access"    
+</IfModule>
